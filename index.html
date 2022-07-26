@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/1.0.0-beta.86/calcite.esm.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://js.arcgis.com/calcite-components/1.0.0-beta.86/calcite.css"
+    />
+  </head>
+  <body>
+    <p>This page is to test browser autofill of email and password fields.</p>
+
+    <form action="auth.html" method="GET">
+      <calcite-label>
+        Email
+        <calcite-input type="email" name="email"></calcite-input>
+      </calcite-label>
+
+      <calcite-label>
+        Password
+        <calcite-input type="password" name="password"></calcite-input>
+      </calcite-label>
+
+      <calcite-button type="submit">submit</calcite-button>
+    </form>
+
+    <button>Click me to display "value" of email and password inputs.</button>
+
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        const form = document.querySelector("form");
+
+        const email = form.elements.email.value;
+        const password = form.elements.password.value;
+
+        window.alert(`email: ${email}\npassword: ${password}`);
+      });
+    </script>
+  </body>
+</html>
